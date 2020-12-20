@@ -35,3 +35,14 @@
 .number.bad {
   background-color: #8e1242;
 }
+
+.playagain {
+  font-size: 24px;
+  padding: 10px;
+  display: none;
+  margin: 20px;
+}
+
+.playagain.visible {
+  display: inline-block;
+}

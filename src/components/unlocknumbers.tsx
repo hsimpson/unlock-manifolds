@@ -18,6 +18,7 @@ export const UnlockNumbers = (): React.ReactElement => {
 
   const [numbersState, setNumbersState] = useState<UnlockNumberState[]>(createRandomArray());
   const [nextNumber, setNextNumber] = useState(1);
+  const [playAgain, setPlayAgain] = useState(false);
 
   const onNumberClicked = (val: number): void => {
     console.log(`clicked on ${val}`);
@@ -32,12 +33,7 @@ export const UnlockNumbers = (): React.ReactElement => {
         }
       }
       if (val === 10) {
-        window.setTimeout(() => {
-          if (window.confirm('Play again?')) {
-            setNextNumber(1);
-            setNumbersState(createRandomArray());
-          }
-        }, 100);
+        setPlayAgain(true);
       }
     } else {
       const newArray = [...numbersState];
@@ -52,23 +48,34 @@ export const UnlockNumbers = (): React.ReactElement => {
           item.condition = UnlockNumberCondition.Initial;
         }
         setNumbersState(newInitArray);
-      }, 3000);
+      }, 2000);
     }
   };
 
+  const onPlayAgainClicked = (): void => {
+    setNextNumber(1);
+    setNumbersState(createRandomArray());
+    setPlayAgain(false);
+  };
+
   return (
-    <div className="numbers-container">
-      <div className="numbers">
-        {numbersState.map((val) => {
-          return (
-            <UnlockNumber
-              key={val.num}
-              num={val.num}
-              condition={val.condition}
-              onNumberClicked={onNumberClicked}></UnlockNumber>
-          );
-        })}
+    <div>
+      <div className="numbers-container">
+        <div className="numbers">
+          {numbersState.map((val) => {
+            return (
+              <UnlockNumber
+                key={val.num}
+                num={val.num}
+                condition={val.condition}
+                onNumberClicked={onNumberClicked}></UnlockNumber>
+            );
+          })}
+        </div>
       </div>
+      <button className={`playagain ${playAgain ? 'visible' : ''}`} onClick={onPlayAgainClicked}>
+        Play again
+      </button>
     </div>
   );
 };
