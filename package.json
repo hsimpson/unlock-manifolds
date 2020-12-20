@@ -1,0 +1,57 @@
+{
+  "name": "unlock-manifolds",
+  "version": "1.0.0",
+  "description": "unlock-manifolds",
+  "main": "index.js",
+  "scripts": {
+    "build": "rimraf dist && webpack --config ./build/webpack.prod.ts",
+    "dev": "webpack serve --config ./build/webpack.dev.ts",
+    "lint": "eslint ./src/ --ext .ts,.tsx"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hsimpson/unlock-manifolds.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hsimpson/unlock-manifolds/issues"
+  },
+  "homepage": "https://github.com/hsimpson/unlock-manifolds#readme",
+  "devDependencies": {
+    "@types/copy-webpack-plugin": "^6.3.0",
+    "@types/node": "^14.14.14",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/webpack": "^4.41.25",
+    "@types/webpack-dev-server": "^3.11.1",
+    "@types/webpack-merge": "^4.1.5",
+    "@typescript-eslint/eslint-plugin": "^4.10.0",
+    "@typescript-eslint/parser": "^4.10.0",
+    "@typescript-eslint/typescript-estree": "^4.10.0",
+    "css-loader": "^5.0.1",
+    "eslint": "^7.15.0",
+    "eslint-config-prettier": "^7.0.0",
+    "eslint-config-react": "^1.1.7",
+    "eslint-plugin-prettier": "^3.3.0",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "file-loader": "^6.2.0",
+    "gh-pages": "^3.1.0",
+    "html-webpack-plugin": "^4.5.0",
+    "prettier": "^2.2.1",
+    "rimraf": "^3.0.2",
+    "style-loader": "^2.0.0",
+    "ts-loader": "^8.0.12",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3",
+    "webpack": "^5.11.0",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.7.2"
+  },
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
